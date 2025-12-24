@@ -144,17 +144,17 @@ The project is currently in its initial release phase with core functionalities 
 
 This project utilizes the following resources and technologies:
 
-- **JsonPowerDB**: [Official Documentation](http://login2explore.com/jpdb/docs.html)
-- **JsonPowerDB Dashboard**: [JPDB Dashboard](http://api.login2explore.com:5577/user/index.html)
+- **JsonPowerDB**: [Official Documentation](https://login2explore.com/jpdb/docs.html)
+- **JsonPowerDB Dashboard**: [JPDB Dashboard](https://api.login2explore.com:5577/user/index.html)
 - **HTML5**: Structure and form elements
 - **JavaScript**: Client-side logic and API integration
 - **Bootstrap**: For responsive UI components (if applicable)
 - **jQuery**: For DOM manipulation and AJAX requests (if applicable)
 
 ### Learning Resources:
-- JsonPowerDB Documentation: http://login2explore.com/jpdb/docs.html
+- JsonPowerDB Documentation: https://login2explore.com/jpdb/docs.html
 - JsonPowerDB GitHub: https://github.com/BeAgarwal/JsonPowerDB
-- Login2Explore: http://www.login2explore.com/
+- Login2Explore: https://www.login2explore.com/
 
 ## Other Information
 
@@ -174,7 +174,7 @@ To run this project, you need:
    ```
 
 2. Obtain your JsonPowerDB connection token:
-   - Register at [Login2Explore](http://api.login2explore.com:5577/user/index.html)
+   - Register at [Login2Explore](https://api.login2explore.com:5577/user/index.html)
    - Generate your connection token
    - Update the token in your JavaScript code
 
