@@ -43,4 +43,7 @@ def create_app():
 if __name__ == '__main__':
     app = create_app()
     print("Starting Flask server on http://localhost:5000")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # Only enable debug mode if explicitly set via environment variable
+    # WARNING: Never run with debug=True in production!
+    debug_mode = app.config.get('DEBUG', False)
+    app.run(host='0.0.0.0', port=5000, debug=debug_mode)

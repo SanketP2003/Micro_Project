@@ -2,7 +2,7 @@ import os
 
 # Flask configuration
 SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
-DEBUG = True
+DEBUG = os.environ.get('FLASK_DEBUG', 'False').lower() in ('true', '1', 't')
 
 # Base directory
 BASE_DIR = os.path.dirname(__file__)
