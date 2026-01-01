@@ -1,10 +1,6 @@
 import os
-import sys
 from flask import Blueprint, request, jsonify
 from werkzeug.utils import secure_filename
-
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from models.database import Document, Dialogue, Summary
 from services.youtube_service import process_youtube_video, is_valid_youtube_url
 from services.pdf_service import process_pdf, is_allowed_file

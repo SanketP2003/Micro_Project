@@ -15,7 +15,6 @@ def is_valid_youtube_url(url):
     
     # YouTube URL patterns
     youtube_patterns = [
-        r'^https?://(?:www\.)?youtube\.com/watch\?v=[\w-]+',
         r'^https?://(?:www\.)?youtube\.com/watch\?.*v=[\w-]+',
         r'^https?://youtu\.be/[\w-]+',
         r'^https?://(?:www\.)?youtube\.com/embed/[\w-]+',

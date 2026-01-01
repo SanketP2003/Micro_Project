@@ -1,10 +1,5 @@
 import sqlite3
 from datetime import datetime
-import sys
-import os
-
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import SQLITE_DATABASE
 
 def get_db_connection():

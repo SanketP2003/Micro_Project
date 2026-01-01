@@ -4,8 +4,11 @@ import os
 SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
 DEBUG = True
 
+# Base directory
+BASE_DIR = os.path.dirname(__file__)
+
 # SQLite Database configuration
-SQLITE_DATABASE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'backend', 'database', 'study_tool.db')
+SQLITE_DATABASE = os.path.join(BASE_DIR, 'database', 'study_tool.db')
 
 # Upload configuration
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
