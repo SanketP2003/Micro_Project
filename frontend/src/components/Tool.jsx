@@ -4,7 +4,8 @@ const API_BASE_URL = 'http://localhost:5000/api'
 
 function Tool() {
   const [youtubeUrl, setYoutubeUrl] = useState('')
-  const [title, setTitle] = useState('')
+  const [youtubeTitle, setYoutubeTitle] = useState('')
+  const [pdfTitle, setPdfTitle] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
@@ -24,7 +25,7 @@ function Tool() {
         },
         body: JSON.stringify({
           url: youtubeUrl,
-          title: title || undefined,
+          title: youtubeTitle || undefined,
         }),
       })
 
@@ -33,7 +34,7 @@ function Tool() {
       if (response.ok && data.success) {
         setMessage(data.message || 'YouTube video processed successfully!')
         setYoutubeUrl('')
-        setTitle('')
+        setYoutubeTitle('')
         fetchDocuments()
       } else {
         setError(data.error || 'Failed to process YouTube video')
@@ -62,8 +63,8 @@ function Tool() {
 
     const formData = new FormData()
     formData.append('file', file)
-    if (title) {
-      formData.append('title', title)
+    if (pdfTitle) {
+      formData.append('title', pdfTitle)
     }
 
     try {
@@ -77,7 +78,7 @@ function Tool() {
       if (response.ok && data.success) {
         setMessage(data.message || 'PDF uploaded successfully!')
         fileInput.value = ''
-        setTitle('')
+        setPdfTitle('')
         fetchDocuments()
       } else {
         setError(data.error || 'Failed to upload PDF')
@@ -146,8 +147,8 @@ function Tool() {
             <input
               id="youtubeTitle"
               type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={youtubeTitle}
+              onChange={(e) => setYoutubeTitle(e.target.value)}
               placeholder="My YouTube Video"
               style={{ width: '100%', padding: '8px', fontSize: '14px' }}
             />
@@ -191,8 +192,8 @@ function Tool() {
             <input
               id="pdfTitle"
               type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={pdfTitle}
+              onChange={(e) => setPdfTitle(e.target.value)}
               placeholder="My PDF Document"
               style={{ width: '100%', padding: '8px', fontSize: '14px' }}
             />
