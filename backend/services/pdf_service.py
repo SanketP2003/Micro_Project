@@ -23,11 +23,12 @@ def extract_text_from_pdf(file_path):
         #         text += page.extract_text()
         #     return text
         
-        raise NotImplementedError(
-            "PDF text extraction is not yet implemented. "
-            "Install PyPDF2 or pdfplumber and implement the extraction logic."
-        )
+        # Return placeholder content for demonstration
+        filename = os.path.basename(file_path)
+        return f"[Placeholder content extracted from {filename}. Install PyPDF2 or pdfplumber for actual PDF text extraction.]"
     
+    except FileNotFoundError as fnf:
+        raise fnf
     except Exception as e:
         raise Exception(f"Error extracting text from PDF: {str(e)}")
 
@@ -40,12 +41,7 @@ def process_pdf(file_path, title=None):
         raise FileNotFoundError("PDF file not found")
     
     # Extract text from PDF
-    try:
-        content = extract_text_from_pdf(file_path)
-    except NotImplementedError:
-        # For now, use placeholder content
-        filename = os.path.basename(file_path)
-        content = f"Content extracted from {filename} would appear here."
+    content = extract_text_from_pdf(file_path)
     
     # Generate title if not provided
     if not title:

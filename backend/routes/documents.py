@@ -159,11 +159,6 @@ def upload_pdf():
         # Process the PDF
         try:
             pdf_data = process_pdf(file_path, title)
-        except NotImplementedError as nie:
-            return jsonify({
-                'success': False,
-                'error': str(nie)
-            }), 501
         except Exception as e:
             # Clean up file if processing fails
             if os.path.exists(file_path):
